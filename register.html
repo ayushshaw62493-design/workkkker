@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KrishiMitra - Register</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background">
+
+  <!-- Rain container -->
+  <div class="rain" id="rain"></div>
+
+  <!-- Center box -->
+  <div class="center-box">
+    <h1>KrishiMitra - Register</h1>
+
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="email" id="regEmail" placeholder="Email">
+    <input type="password" id="regPassword" placeholder="Password">
+    <button onclick="register()">Register</button>
+
+    <p>Already have an account? <a href="index.html">Login Here</a></p>
+  </div>
+
+</div>
+
+<script>
+// Simple rain effect
+const rainContainer = document.getElementById('rain');
+if(rainContainer){
+  const drops = 50; // number of raindrops
+  for(let i=0; i<drops; i++){
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    drop.style.left = Math.random() * 100 + '%';
+    drop.style.animationDelay = Math.random() * 2 + 's';
+    drop.style.animationDuration = 0.5 + Math.random() * 1 + 's';
+    rainContainer.appendChild(drop);
+  }
+}
+
+// Registration function
+function register() {
+  const username = document.getElementById("regUsername").value;
+  const email = document.getElementById("regEmail").value;
+  const password = document.getElementById("regPassword").value;
+
+  if(username && email && password){
+    alert("Registration successful!");
+    window.location.href = "index.html"; // redirect to login
+  } else {
+    alert("Please fill all fields.");
+  }
+}
+</script>
+8
+</body>
+</html>
